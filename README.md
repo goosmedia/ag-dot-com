@@ -1,2 +1,4 @@
 # ag-dot-com
 Dot Com version of AG dot CA
+
+Somewhat different than dot ca. 
