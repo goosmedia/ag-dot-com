@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Fan Club — Aaron Goos</title>
+  <script>
+    (function () {
+      var t = localStorage.getItem('ag-theme');
+      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Newsreader:ital,opsz,wght@1,6..72,300..500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="../AG-music Logo-2017.png">
+  <style>
+    .gate {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: 2rem; position: relative; z-index: 5; background: var(--bg);
+    }
+    .gate .sec-no { margin-bottom: 1.2rem; }
+    .gate h1 {
+      font-size: clamp(2.6rem, 9vw, 7rem); font-weight: 800;
+      font-stretch: 125%; text-transform: uppercase; line-height: .95;
+      letter-spacing: -.015em;
+    }
+    .gate p {
+      font-family: var(--body); font-style: italic; color: var(--mid);
+      font-size: clamp(1rem, 1.6vw, 1.3rem); max-width: 42ch; margin: 1.6rem 0 3rem;
+    }
+    .gate .cta { cursor: default; opacity: .55; }
+    .gate .back { margin-top: 2.4rem; font-size: .7rem; letter-spacing: .24em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main class="gate">
+    <!-- data-placeholder: this is a door, not the room.
+         Real page: sign-in (3rd-party auth) + member content, decided later. -->
+    <span class="sec-no">00 /</span>
+    <h1>Behind<br>the door</h1>
+    <p>Demos, lyric sheets, video and dates. The sign-in isn't wired up yet — this page is standing in for the room.</p>
+    <span class="cta"><span class="cta-play">●</span>&nbsp; sign in — coming soon</span>
+    <a class="back u" href="../">← back to the record</a>
+  </main>
+</body>
+</html>

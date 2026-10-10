@@ -1,40 +1,221 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aaron Goos - Musician</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #000000;
-            color: #FFFFFF;
-            text-align: center;
-        }
-        img {
-            max-width: 689px;
-            width: 100%;
-            height: auto;
-        }
-        .announcement {
-            position: absolute;
-            bottom: 15%;
-            font-family: "Courier New", Courier, monospace;
-            font-size: 1.2rem;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aaron Goos — guitar &amp; voice</title>
+  <meta name="description" content="Aaron Goos — voice, guitar, sometimes piano. Listen, book, and more.">
+  <script>
+    /* theme before first paint so there is no flash.
+       Light is the default; dark is opt-in per visitor (remembered). */
+    (function () {
+      var t = 'light';
+      try { t = localStorage.getItem('ag-theme') || 'light'; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Newsreader:ital,opsz,wght@1,6..72,300..500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="AG-music Logo-2017.png">
 </head>
 <body>
-    <img src="AG-music Logo-2017-darkMode.png" alt="AG - Musician Logo">
-    <div class="announcement">That's right... dot COM</div>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="mark" href="#top" aria-label="Aaron Goos — home">
+      <img src="ag-mark.png" alt="Aaron Goos">
+    </a>
+    <nav class="nav">
+      <a href="#listen">Listen</a>
+      <a href="#book">Book</a>
+      <a href="#more">More</a>
+      <button id="themeBtn" class="theme-btn" type="button" aria-label="Toggle light and dark mode">
+        <span class="theme-dot" aria-hidden="true"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ================= HERO + LISTEN (one pinned composition, desktop) ====
+         Photo holds left; headline fades out fast as the track list rises
+         into the same screen, all against the parallax drift. Book and More
+         then PUSH this whole stage out when they arrive. -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="stage" aria-hidden="true">
+          <img class="layer ghost" data-depth="ghost" src="AG_guitar.jpg" alt="">
+          <img class="layer solid" data-depth="solid" src="AG_guitar.jpg" alt="">
+        </div>
+        <div class="hero-right">
+          <div class="hero-type">
+            <p class="kicker"><span class="accent">●</span>&nbsp; Aaron Goos · live · guitar &amp; voice</p>
+            <h1>PRETTY GOOD<br>BACKGROUND<br>MUSIC.</h1>
+            <p class="lede">Voice, guitar, sometimes piano.</p>
+          </div>
+          <div id="listen" class="hero-listen">
+            <div class="sec-head">
+              <span class="sec-no">01</span>
+              <h2>Listen</h2>
+            </div>
+
+            <!-- data-placeholder: swap titles/durations/links with real SoundCloud tracks -->
+            <ul class="tracks" data-placeholder>
+              <li class="track">
+                <button class="track-row" type="button" aria-expanded="false">
+                  <span class="track-no">01</span>
+                  <span class="track-title">Long Way Around</span>
+                  <span class="track-meta">3:42</span>
+                  <span class="track-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="player">
+                  <div class="player-inner">
+                    <iframe data-src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fplaceholder%2Ftrack-one&color=%238a5f42&auto_play=true&hide_related=true&show_comments=false"
+                            title="SoundCloud player" frameborder="0" allow="autoplay"></iframe>
+                  </div>
+                </div>
+              </li>
+              <li class="track">
+                <button class="track-row" type="button" aria-expanded="false">
+                  <span class="track-no">02</span>
+                  <span class="track-title">The Ferry Song</span>
+                  <span class="track-meta">4:17</span>
+                  <span class="track-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="player">
+                  <div class="player-inner">
+                    <iframe data-src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fplaceholder%2Ftrack-two&color=%238a5f42&auto_play=true&hide_related=true&show_comments=false"
+                            title="SoundCloud player" frameborder="0" allow="autoplay"></iframe>
+                  </div>
+                </div>
+              </li>
+              <li class="track">
+                <button class="track-row" type="button" aria-expanded="false">
+                  <span class="track-no">03</span>
+                  <span class="track-title">Saltwater</span>
+                  <span class="track-meta">2:58</span>
+                  <span class="track-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="player">
+                  <div class="player-inner">
+                    <iframe data-src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fplaceholder%2Ftrack-three&color=%238a5f42&auto_play=true&hide_related=true&show_comments=false"
+                            title="SoundCloud player" frameborder="0" allow="autoplay"></iframe>
+                  </div>
+                </div>
+              </li>
+              <li class="track">
+                <button class="track-row" type="button" aria-expanded="false">
+                  <span class="track-no">04</span>
+                  <span class="track-title">Kitchen Table Waltz</span>
+                  <span class="track-meta">3:26</span>
+                  <span class="track-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="player">
+                  <div class="player-inner">
+                    <iframe data-src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fplaceholder%2Ftrack-four&color=%238a5f42&auto_play=true&hide_related=true&show_comments=false"
+                            title="SoundCloud player" frameborder="0" allow="autoplay"></iframe>
+                  </div>
+                </div>
+              </li>
+              <li class="track">
+                <button class="track-row" type="button" aria-expanded="false">
+                  <span class="track-no">05</span>
+                  <span class="track-title">Cordwood and Rain</span>
+                  <span class="track-meta">5:03</span>
+                  <span class="track-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="player">
+                  <div class="player-inner">
+                    <iframe data-src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fplaceholder%2Ftrack-five&color=%238a5f42&auto_play=true&hide_related=true&show_comments=false"
+                            title="SoundCloud player" frameborder="0" allow="autoplay"></iframe>
+                  </div>
+                </div>
+              </li>
+              <li class="track">
+                <button class="track-row" type="button" aria-expanded="false">
+                  <span class="track-no">06</span>
+                  <span class="track-title">Almost Home</span>
+                  <span class="track-meta">3:11</span>
+                  <span class="track-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="player">
+                  <div class="player-inner">
+                    <iframe data-src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fplaceholder%2Ftrack-six&color=%238a5f42&auto_play=true&hide_related=true&show_comments=false"
+                            title="SoundCloud player" frameborder="0" allow="autoplay"></iframe>
+                  </div>
+                </div>
+              </li>
+              <li class="track">
+                <button class="track-row" type="button" aria-expanded="false">
+                  <span class="track-no">07</span>
+                  <span class="track-title">The Last of the Light</span>
+                  <span class="track-meta">4:44</span>
+                  <span class="track-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="player">
+                  <div class="player-inner">
+                    <iframe data-src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fplaceholder%2Ftrack-seven&color=%238a5f42&auto_play=true&hide_related=true&show_comments=false"
+                            title="SoundCloud player" frameborder="0" allow="autoplay"></iframe>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <p class="sec-foot"><a class="u" href="https://soundcloud.com/" data-placeholder>all tracks on SoundCloud ↗</a></p>
+          </div>
+        </div>
+        <div class="scroll-cue">scroll&nbsp;↓</div>
+      </div>
+    </section>
+
+    <!-- ================= BOOK (push panel) ================= -->
+    <section id="book" class="book push">
+      <div class="sec-head">
+        <span class="sec-no">02</span>
+        <h2>Book</h2>
+      </div>
+      <!-- data-placeholder: the email never appears in the HTML or even the
+           DOM — fragments are assembled at click-time only. Regenerate the
+           base64 parts for a real address with:
+           node -e "b=s=>Buffer.from(s).toString('base64');console.log(b('DOMAIN'),b('TLD'),b('LOCALPART'))"
+           then update the mapping order in app.js §4. -->
+      <div class="book-grid" data-placeholder>
+        <div class="book-item">
+          <span class="book-label">Email</span>
+          <a class="u big" data-contact="email"
+             data-x1="YWFyb25nb29z" data-x2="ZXhhbXBsZQ" data-x3="aGVsbG8"
+             href="#">say hello&nbsp;↗</a>
+        </div>
+        <div class="book-item">
+          <span class="book-label">Phone</span>
+          <a class="u big" data-contact="phone" data-vanity="(250) 908-GOOS"
+             href="#">(250) 908-GOOS</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MORE (push panel) ================= -->
+    <section id="more" class="more push">
+      <div class="sec-head">
+        <span class="sec-no">03</span>
+        <h2>More</h2>
+      </div>
+      <a class="door" href="more/">
+        <span class="door-word">FAN&nbsp;CLUB</span>
+        <span class="door-note">Songbooks, content, a T-shirt that says “I’m a fan of Aaron Goos”. Coming soon (when fans arrive).</span>
+        <span class="door-arrow">→</span>
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="fine">© 2026 Aaron Goos</p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
